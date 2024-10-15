@@ -1,8 +1,11 @@
 import math
 
 def calculate_circle_properties():
-    # Get the diameter from the user
-    diameter = float(input("Enter the diameter of the circle: "))
+    diameter = input("Enter the diameter of the circle: ")
+    try:
+        diameter = float(diameter)
+    except ValueError:
+        print("Error: Please enter a valid number.")
     if diameter < 0:
         print("Error: Diameter cannot be negative. Please enter a valid value.")
         return 
@@ -12,5 +15,4 @@ def calculate_circle_properties():
     print(circumference)
     print(area)
 
-# Call the function
 calculate_circle_properties()
